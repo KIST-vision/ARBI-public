@@ -34,7 +34,7 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 
 |이름|타입|설명|형식|Requirement Level|
-|----|----|----|----|
+|----|----|----|----|----|
 |ClientKey|String|클라우드 서비스의 API client Key|일반 String|REQUIRED|
 |ClientSecret|String|클라우드 서비스의 API Client Secret|일반 String|REQUIRED|
 |Scope|String|사용자에게 사용 요청할 Api Scope|일반 String|OPTIONAL|

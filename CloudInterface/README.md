@@ -2,7 +2,7 @@
 
 ![ARBI 프레임워크 구성도](./ARBIArchitecture-CloudInterface.png)
 
-아키텍쳐 도식 중 붉은 사각형이 Cloud Interface이다.
+아키텍쳐 도식 중 우측의 붉은 사각형이 Cloud Interface이다.
 
 ## 개요
 클라우드 인터페이스는 지능체계가 구글, 네이버 등의 클라우드 서비스를 활용할 수 있도록 인터페이스 역할을 수행하는 에이전트다.
@@ -14,11 +14,8 @@
 ## 기능
 클라우드 인터페이스는 다른 에이전트의 요청에 따라 외부 웹 서비스를 수행하고 결과값을 반환하게 되어 있다.
 클라우드 인터페이스를 사용한 외부 서비스 사용 sequence diagram은 다음과 같다.
-<<<<<<< HEAD
 ![클라우드 인터페이스 다이어그램](./CloudInterfaceSequenceDiagram.png)
-=======
-![](./CloudInterfaceSequenceDiagram.png)
->>>>>>> 16a0e2c22ade29983d8c8f06cc4256ac85aaaa1f
+
 
 ### 모델
 Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이 필요하다. 모델은 다음과 같이 구성되어 있다.
@@ -52,10 +49,8 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 
 ###### api key
-<<<<<<< HEAD
+
 단순 Api Key만을 사용하는 인증 방식에서 필요한 모델이다.
-=======
->>>>>>> 16a0e2c22ade29983d8c8f06cc4256ac85aaaa1f
 
 |이름|타입|설명|형식|Requirement Level
 |----|----|----|----|----|

@@ -1,14 +1,21 @@
 
 # 클라우드 인터페이스
+
+![ARBI 프레임워크 구성도](./ARBIArchitecture-CloudInterface.png)
+
+아키텍쳐 도식 중 붉은 사각형이 Cloud Interface이다.
+
 ## 개요
 클라우드 인터페이스는 지능체계가 구글, 네이버 등의 클라우드 서비스를 활용할 수 있도록 인터페이스 역할을 수행하는 에이전트다.
+
+
 지능체계 내의 다른 에이전트들이 클라우드 서비스를 이용해야 할 때 클라우드 인터페이스를 사용하면 인터페이스는 클라우드 서비스를 사용하기 위해 Knowledge Manager로부터 클라우드 서비스를 이용하기 위해 필요한 지식들을 질의해 오며, 질의된 결과를 바탕으로 필요한 인증 절차를 대행해주고,  지식을 바탕으로 웹 서비스의 결과값을 파싱하여 GeneralizedList의 형태로 결과를 반환하게 된다.
 
 
 ## 기능
 클라우드 인터페이스는 다른 에이전트의 요청에 따라 외부 웹 서비스를 수행하고 결과값을 반환하게 되어 있다.
 클라우드 인터페이스를 사용한 외부 서비스 사용 sequence diagram은 다음과 같다.
-![alt text](./CloudInterfaceSequenceDiagram.png)
+![클라우드 인터페이스 다이어그램](./CloudInterfaceSequenceDiagram.png)
 
 ### 모델
 Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이 필요하다. 모델은 다음과 같이 구성되어 있다.
@@ -42,6 +49,8 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 
 ###### api key
+단순 Api Key만을 사용하는 인증 방식에서 필요한 모델이다.
+
 |이름|타입|설명|형식|Requirement Level
 |----|----|----|----|----|
 |ApiKey|String|대상 클라우드 서비스의 API Key|일반 String|REQUIRED|
@@ -49,10 +58,6 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 ##### Parsing Rule
 _주의 : 이 기능은 현재 구현되지 않았습니다._
-
-
-
-
 
 
 ### 프로토콜
@@ -75,11 +80,3 @@ _주의 : 이 기능은 현재 구현되지 않았습니다._
 
  * 현 버전에서는 사용할 수 있는 서비스의 종류가 한정되어 있다.
   * Google Calendar CalendarList list, Google Calendar CalendarList create, Google Calendar CalendarList delete, KMA ForecastSpaceData
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgzMjgxNzI4XX0=
--->
->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjgyNjc1MThdfQ==
--->

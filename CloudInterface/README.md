@@ -1,4 +1,3 @@
-
 # 클라우드 인터페이스
 
 ![ARBI 프레임워크 구성도](./ARBIArchitecture-CloudInterface.png)
@@ -15,7 +14,11 @@
 ## 기능
 클라우드 인터페이스는 다른 에이전트의 요청에 따라 외부 웹 서비스를 수행하고 결과값을 반환하게 되어 있다.
 클라우드 인터페이스를 사용한 외부 서비스 사용 sequence diagram은 다음과 같다.
+<<<<<<< HEAD
 ![클라우드 인터페이스 다이어그램](./CloudInterfaceSequenceDiagram.png)
+=======
+![](./CloudInterfaceSequenceDiagram.png)
+>>>>>>> 16a0e2c22ade29983d8c8f06cc4256ac85aaaa1f
 
 ### 모델
 Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이 필요하다. 모델은 다음과 같이 구성되어 있다.
@@ -25,6 +28,7 @@ Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이
 
 
 #### CloudService Model
+
 |이름|타입|설명|형식|예시|Requirement Level|
 |----|----|-------|---|----|--|
 |Provider|String|클라우드 서비스 제공자|일반 String|Google, KMA|REQUIRED|
@@ -41,7 +45,6 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 
 |이름|타입|설명|형식|Requirement Level|
-|----|----|----|----|
 |ClientKey|String|클라우드 서비스의 API client Key|일반 String|REQUIRED|
 |ClientSecret|String|클라우드 서비스의 API Client Secret|일반 String|REQUIRED|
 |Scope|String|사용자에게 사용 요청할 Api Scope|일반 String|OPTIONAL|
@@ -49,7 +52,10 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 
 ###### api key
+<<<<<<< HEAD
 단순 Api Key만을 사용하는 인증 방식에서 필요한 모델이다.
+=======
+>>>>>>> 16a0e2c22ade29983d8c8f06cc4256ac85aaaa1f
 
 |이름|타입|설명|형식|Requirement Level
 |----|----|----|----|----|

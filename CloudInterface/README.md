@@ -1,4 +1,3 @@
-
 # 클라우드 인터페이스
 ## 개요
 클라우드 인터페이스는 지능체계가 구글, 네이버 등의 클라우드 서비스를 활용할 수 있도록 인터페이스 역할을 수행하는 에이전트다.
@@ -8,7 +7,7 @@
 ## 기능
 클라우드 인터페이스는 다른 에이전트의 요청에 따라 외부 웹 서비스를 수행하고 결과값을 반환하게 되어 있다.
 클라우드 인터페이스를 사용한 외부 서비스 사용 sequence diagram은 다음과 같다.
-![alt text](./CloudInterfaceSequenceDiagram.png)
+![](./CloudInterfaceSequenceDiagram.png)
 
 ### 모델
 Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이 필요하다. 모델은 다음과 같이 구성되어 있다.
@@ -18,6 +17,7 @@ Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이
 
 
 #### CloudService Model
+
 |이름|타입|설명|형식|예시|Requirement Level|
 |----|----|-------|---|----|--|
 |Provider|String|클라우드 서비스 제공자|일반 String|Google, KMA|REQUIRED|
@@ -42,6 +42,7 @@ OAUTH 2.0 방식의 인증이 필요할 때 사용하는 모델이다.
 
 
 ###### api key
+
 |이름|타입|설명|형식|Requirement Level
 |----|----|----|----|----|
 |ApiKey|String|대상 클라우드 서비스의 API Key|일반 String|REQUIRED|
@@ -75,11 +76,3 @@ _주의 : 이 기능은 현재 구현되지 않았습니다._
 
  * 현 버전에서는 사용할 수 있는 서비스의 종류가 한정되어 있다.
   * Google Calendar CalendarList list, Google Calendar CalendarList create, Google Calendar CalendarList delete, KMA ForecastSpaceData
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgzMjgxNzI4XX0=
--->
->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjgyNjc1MThdfQ==
--->

@@ -8,16 +8,8 @@
 ## 기능
 클라우드 인터페이스는 다른 에이전트의 요청에 따라 외부 웹 서비스를 수행하고 결과값을 반환하게 되어 있다.
 클라우드 인터페이스를 사용한 외부 서비스 사용 sequence diagram은 다음과 같다.
-![alt text](Cloud Interface Sequence Diagram.png)
-```mermaid
-sequenceDiagram
-Agent ->> CloudInterface: REQUEST CloudServicePorperty
-CloudInterface ->> KnowledgeManager: QUERY QueryCloudServiceProperty
-KnowledgeManager ->> CloudInterface : RESPONSE CloudServiceProperty
-CloudInterface ->> Cloud Service : HTTP Request
-Cloud Service ->> CloudInterface : HTTP Response
-CloudInterface ->> Agent : RESPONSE content
-```
+![alt text](./CloudInterfaceSequenceDiagram.png)
+
 ### 모델
 Cloud Interface는 클라우드 서비스를 정의하는 클라우드 모델이 필요하다. 모델은 다음과 같이 구성되어 있다.
 

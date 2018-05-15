@@ -16,13 +16,13 @@ ContextManger는 모든 서비스에서 공통적으로 요구되는 핵심적�
 상황 서술자는 크게 속성 서술자와 관계 서술자로 나뉜다. 속성 서술자는 주로 저수준 상황 정보를 표현하기 위한 서술자들로써 주로 개별 물체, 로봇, 사람 등의 상태를 나타낸다. 관계 서술자는 주로 고수준 상황 정보를 표현하기 위한 서술자들로써 주로 서로 다른 물체, 로봇, 사람들 간의 시간-공간-사용자 복합 관계를 나타낸다.
 대표적인 속성 서술자와 관계 서술자들의 목록은 아래 표와 같다.
 
-###속성 서술자(attribute predicate)
+속성 서술자(attribute predicate)
 
 Environment|Object|Human|Robot|Event
 ---|---|---|---|---
 mainColorOfObject, boundingBoxSize, roomnumber, …|mainColorOfObject, boundingBoxSize, objectShapeType, stateOfObject, …|hasSex, hasAge, belongto, nameString, hasPosition, …|currentJointAngle, currentJointTorque, hasCamera, hasHand, robotHandType, …|startTime, endTime, duration, …
 
-###관계 서술자(relationship predicate)
+관계 서술자(relationship predicate)
 
 Subject\Object|Environment|Object|Human|Robot|Event
 ---|---|---|---|---|---
@@ -37,6 +37,6 @@ ContextManger는 TaskManger의 상황 정보 조회를 위하여 동기 또는 �
 
 Sender|Type|Description|Receiver|GL|Argument
 ---|---|---|---|---|---
-TaskManager|Request|상황 정보 조회/추론 요청|ContextManager|(context($predicate $subject $object $timeOperator $time))|$predicate: 상황 서술자 $subject: 서술자의 주어 $object: 서술자의 목적어 $timeOperator: 상황 서술자의 유효 시간 추론 서술자, BEFORE, AFTER 등 $time: 상황 서술자의 유효 시간
+TaskManager|Request|상황 정보 조회/추론 요청|ContextManager|(context($predicate $subject $object $timeOperator $time))|$predicate: 상황 서술자 <br>$subject: 서술자의 주어 <br>$object: 서술자의 목적어 <br>$timeOperator: 상황 서술자의 유효 시간 추론 서술자, BEFORE, AFTER 등 <br>$time: 상황 서술자의 유효 시간
 TaskManager|Subscribe|상황 정보 구독 요청|ContextManager|(subscribe $id (rule (fact ($predicate1 $subject1 $object1))--> (notify ($predicate2 $subject2 $object2))))|$id: 구독 등록 식별자 <br>$predicate1: 구독 상황 서술자 <br>$subject1: 구독 상황 서술자의 주어 <br>$object1: 구독 상황 서술자의 목적어 <br>$predicate2: 통보 상황 서술자 <br>$subject2: 통보 상황 서술자의 주어 <br>$object2: 통보 상황 서술자의 목적어
 TaskManager|Unsubscribe|상황 정보 구독 취소 요청|ContextManager|(unsubscribe $id)|$id: 구독 등록 식별자

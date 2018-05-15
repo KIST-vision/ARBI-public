@@ -24,8 +24,7 @@ mainColorOfObject, boundingBoxSize, roomnumber, …|mainColorOfObject, boundingB
 
 ###관계 서술자(relationship predicate)
 
-     Subject
-Object|Environment|Object|Human|Robot|Event
+     Subject	Object|Environment|Object|Human|Robot|Event
 ---|---|---|---|---|---
 Environment|locatedAtRelative, connectedTo, …|in-ContGeneric, outSideOf, in-CenterOf, …|in-ContGeneric, outSideOf, in-CenterOf, …|in-ContGeneric, outSideOf, in-CenterOf, …|typePrimaryFunction-containerUsed, …
 Object|storedAtPlace, inRoom,  near, far, …|locatedAtRelative, piled, madeOf, …|locatedAtRelative, createdBy, …|locatedAtRelative, createdBy, …|typePrimaryFunction-itemUsedFor, ...

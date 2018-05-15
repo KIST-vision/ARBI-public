@@ -4,9 +4,13 @@
 ## 개요
 KnowledgeManager는 사용자, 인지, 환경, 행위, 로봇 프로파일 등을 표현하는 로봇 온톨로지를 기반으로 로봇 서비스 수행의 전반적인 지식을 제공하는 모듈이다.
 
+
+
 ## 기능
 * 로봇 온톨로지의 효율적인 관리
 * 타 agent가 요청하는 지식 추론 및 지식 제공
+
+
 
 ## 프로토콜
 
@@ -24,6 +28,31 @@ TaskManager로부터 오는 메시지를 처리하기 위한 프로토콜은 다
 |(|request|GuideAction|$destination|$result||||)|목적지에 대한 안내 행동 요청|
 |(|request|Path|(type $type)|(currentPoint $x $y $z)|$departure|$destination||)|현재좌표로부터 목적지까지의 이동경로|
 
+
+
+## Example
+
+```java
+import kr.ac.hanyang.agent.KmAgent;
+import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
+
+
+public class TestClass {
+	public static final String JMS_BROKER_URL = "tcp://127.0.0.1:61616";
+	public static final String TASKMANAGER_ADDRESS = "agent://www.arbi.com/taskManager";
+	public static final String KNOWLEDGEMANAGER_ADDRESS = "agent://www.arbi.com/knowledgeManager";
+	
+	public static void main(String[] args) {
+		KmAgent km = new KmAgent();
+		ArbiAgentExecutor.execute(JMS_BROKER_URL, KNOWLEDGEMANAGER_ADDRESS, km);
+	}
+
+}
+```
+
+
+
 ## 온톨로지 Ontology
+
 * isro.owl
 * isro_service.owl

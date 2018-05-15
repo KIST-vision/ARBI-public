@@ -34,6 +34,7 @@ Event|objectActedOn, deviseUsed, …|objectActedOn, deviseUsed, …|agentActedOn
 
 ## 프로토콜
 ContextManger는 TaskManger의 상황 정보 조회를 위하여 동기 또는 비동기 형식의 메시지 전송 방식을 지원한다. ContextManager가 사용 가능한 메시지 형식은 다음과 같다. 
+
 Sender|Type|Description|Receiver|GL|Argument
 ---|---|---|---|---|---
 TaskManager|Request|상황 정보 조회/추론 요청|ContextManager|(context($predicate $subject $object $timeOperator $time))|$predicate: 상황 서술자 $subject: 서술자의 주어 $object: 서술자의 목적어 $timeOperator: 상황 서술자의 유효 시간 추론 서술자, BEFORE, AFTER 등 $time: 상황 서술자의 유효 시간

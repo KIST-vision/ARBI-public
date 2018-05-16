@@ -14,7 +14,7 @@ KnowledgeManager는 사용자, 인지, 환경, 행위, 로봇 프로파일 등�
 
 ## 프로토콜
 
-TaskManager로부터 오는 메시지를 처리하기 위한 프로토콜은 다음과 같다.
+타 agent로부터 오는 메시지를 처리하기 위한 프로토콜은 다음과 같다.
 
 |(|Operation|Target|Expression 1|Expression 2|Expression 3|Expression 4|Expression 5|)|Description|
 |-|-|-|-|-|-|-|-|-|-|

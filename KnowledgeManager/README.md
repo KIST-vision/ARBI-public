@@ -23,6 +23,7 @@ KnowledgeManager는 사용자, 인지, 환경, 행위, 로봇 프로파일 등�
 |(|create|Property|$propertyType|$superProperty|$property|$domain|$range|)|온톨로지에 새로운 프로퍼티 생성|
 |(|create|Relation|$subject|(Predicate $p1 $o1)|(Predicate $p2 $o2)|...||)|온톨로지에 새로운 관계 트리플(S - P - O) 생성|
 |(|query|Relation|*$subject*|*$property*|*$object*|||)|$s, $p, $o 중 1개 또는 2개의 정보 필요|
+|(|query|MultiRelations|( tripleSet|(triple $s $p $o)|... )|$result||)|조인되어있는 질의를 처리해주는 프로토콜|
 |(|query|OnRestriction|$targetClass|$restrictionProperty|$restrictionObject|$result||)||
 |(|request|PredicateAnchoring|$subject|$property|$object|||)|자연어 용어를 온톨로지 용어로 매핑|
 |(|request|GuideAction|$destination|$result||||)|목적지에 대한 안내 행동 요청|

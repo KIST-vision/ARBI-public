@@ -31,7 +31,7 @@ KnowledgeManager는 사용자, 인지, 환경, 행위, 로봇 프로파일 등�
 |(|delete|Relation|$subject|$property|$object|||)||
 |(|request|PredicateAnchoring|$subject|$property|$object|||)|자연어 용어를 온톨로지 용어로 매핑|
 |(|request|GuideAction|$destination|$result||||)|목적지에 대한 안내 행동 요청|
-|(|request|Path|(type $type)|(currentPoint $x $y $z)|$departure|$destination||)|현재좌표로부터 목적지까지의 이동경로|
+|(|request|Path|$type|(currentPoint $x $y $z)|$departure|$destination||)|현재좌표로부터 목적지까지의 이동경로|
 
 
 

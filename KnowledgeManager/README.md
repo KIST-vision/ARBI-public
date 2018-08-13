@@ -25,6 +25,10 @@ KnowledgeManager는 사용자, 인지, 환경, 행위, 로봇 프로파일 등�
 |(|query|Relation|*$subject*|*$property*|*$object*|||)|$s, $p, $o 중 1개 또는 2개의 정보 필요|
 |(|query|MultiRelations|( tripleSet|(triple $s $p $o)|... )|$result||)|조인되어있는 질의를 처리해주는 프로토콜|
 |(|query|OnRestriction|$targetClass|$restrictionProperty|$restrictionObject|$result||)||
+|(|delete|Class|$class|||||)|삭제하려는 클래스에 하위클래스가 존재하면 삭제불가 메시지 반환|
+|(|delete|Individual|$individual|||||)||
+|(|delete|Property|$property|||||)|삭제하려는 프로퍼티의 usage가 존재하면 삭제불가 메시지 반환|
+|(|delete|Relation|$subject|$property|$object|||)||
 |(|request|PredicateAnchoring|$subject|$property|$object|||)|자연어 용어를 온톨로지 용어로 매핑|
 |(|request|GuideAction|$destination|$result||||)|목적지에 대한 안내 행동 요청|
 |(|request|Path|(type $type)|(currentPoint $x $y $z)|$departure|$destination||)|현재좌표로부터 목적지까지의 이동경로|

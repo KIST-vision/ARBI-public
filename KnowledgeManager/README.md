@@ -22,7 +22,7 @@ KnowledgeManager는 사용자, 인지, 환경, 행위, 로봇 프로파일 등�
 |(|create|Individual|$typeClass|$individual||||)|온톨로지에 새로운 인디비주얼 생성|
 |(|create|Property|$propertyType|$superProperty|$property|$domain|$range|)|온톨로지에 새로운 프로퍼티 생성|
 |(|create|Relation|$subject|(Predicate $p1 $o1)|(Predicate $p2 $o2)|...||)|온톨로지에 새로운 관계 트리플(S - P - O) 생성|
-|(|query|Relation|*$subject*|*$property*|*$object*|||)|$s, $p, $o 중 1개 또는 2개의 정보 필요|
+|(|query|Relation|*$subject*|*$property*|*$object*|$result||)|$s, $p, $o 중 1개 또는 2개의 정보 필요|
 |(|query|MultiRelations|( tripleSet|(triple $s $p $o)|... )|$result||)|조인되어있는 질의를 처리해주는 프로토콜|
 |(|query|OnRestriction|$targetClass|$restrictionProperty|$restrictionObject|$result||)||
 |(|delete|Class|$class|||||)|삭제하려는 클래스에 하위클래스가 존재하면 삭제불가 메시지 반환|

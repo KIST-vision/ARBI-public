@@ -1,0 +1,1358 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://robot-arbi.kr/ontologies/isro_social.owl#"
+     xml:base="http://robot-arbi.kr/ontologies/isro_social.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:isro="http://robot-arbi.kr/ontologies/isro.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:isro_social="http://robot-arbi.kr/ontologies/isro_social.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#">
+    <owl:Ontology rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl">
+        <owl:versionIRI rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro.owl/1.2.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro.owl#target -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro.owl#target"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ageGroup -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ageGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#containIntention -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#containIntention">
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#estimatedAgeGroup -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#estimatedAgeGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#estimatedGender -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#estimatedGender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#facialEmotion -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#facialEmotion">
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#gender -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#hang -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#hang">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#EnduringThing-Localized"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/knowrob.owl#EnduringThing-Localized"/>
+        <rdfs:label>hang</rdfs:label>
+        <rdfs:label>걸리다</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState-Emotion -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState-Emotion">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState-Intention -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState-Intention">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState-Sociality -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState-Sociality">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#hasSocialState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#isAged -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#isAged">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#motivate -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#motivate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#motivate-Emotion -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#motivate-Emotion">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#motivate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#motivate-Intention -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#motivate-Intention">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#motivate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#motivate-Sociality -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#motivate-Sociality">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#motivate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#prefer -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#prefer">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#targetAgeGroup -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#targetAgeGroup">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#target"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#age">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#EmbodiedAgent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#estimatedAge -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#estimatedAge"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#faceID -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#faceID"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#hasAppellation -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#hasAppellation"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#speechContent -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#speechContent"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#visitFreq -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#visitFreq">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#ActionOnObject -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#ActionOnObject"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#EmbodiedAgent -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#EmbodiedAgent"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#EnduringThing-Localized -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#EnduringThing-Localized"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#Event -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Event"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#Person -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Person"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#PurposefulAction -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#PurposefulAction"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#StaticSituation -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#StaticSituation"/>
+    
+
+
+    <!-- http://knowrob.org/kb/srdl2-cap.owl#Capability -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/srdl2-cap.owl#Capability"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro.owl#AttentionSituation -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro.owl#AttentionSituation">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#StaticSituation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro.owl#ConceptualThing -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro.owl#ConceptualThing"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro.owl#Department -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro.owl#Department"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro.owl#SocialConcept -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#ConceptualThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ActionRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ActionRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AdultAge -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AdultAge">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AdviceGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AdviceGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AgreementIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AgreementIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Anger -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Anger">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ApologyIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ApologyIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Appellation -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Appellation">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AppointmentIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AppointmentIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AttentionGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AttentionGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#AttentionIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#AttentionIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#BehaviouralExpression -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#BehaviouralExpression">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#BehaviouralExpressionCapability -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#BehaviouralExpressionCapability">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#BiologicalConcept -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#BiologicalConcept">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#ConceptualThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#BoastingIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#BoastingIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#BowingCasually -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#BowingCasually">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Farewell"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Greeting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#targetAgeGroup"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AdultAge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#BowingPolitely -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#BowingPolitely">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Farewell"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Greeting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#targetAgeGroup"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#OldAge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Cognition -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Cognition">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#GenericTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#CommandGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#CommandGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Compliment -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Compliment">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Conservatism -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Conservatism">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ConsolationGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ConsolationGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Conveyance -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Conveyance">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#GenericTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#CuriosityIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#CuriosityIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#DeclarativeIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#DeclarativeIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#DeliveryIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#DeliveryIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#DeliveryRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#DeliveryRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ActionRequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#DisagreementIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#DisagreementIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#DoubtIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#DoubtIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalCapability -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalCapability">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalExpression -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalExpression">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#StaticSituation"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EmpatheticExpression -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EmpatheticExpression">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EmpathyCapability -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EmpathyCapability">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EncouragementIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EncouragementIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EncourgeGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EncourgeGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#EventExplanation -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#EventExplanation">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExplanationIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ExplanationIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ExplanationIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Expression -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Expression">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionCapability -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionCapability">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#FacialExpression -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#FacialExpression">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#FacialExpressionCapability -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#FacialExpressionCapability">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Farewell -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Farewell">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#InteractiveAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Fear -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Fear">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Female -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Female">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Sex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Gender -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Gender">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#GenericTask -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#GenericTask">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Generosity -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Generosity">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Gesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#BehaviouralExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#GladnessIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#GladnessIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Greeting -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Greeting">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#InteractiveAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#GreetingGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#GreetingGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#GreetingIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#GreetingIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#GuideRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#GuideRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ActionRequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#GuidetoSpace -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#GuidetoSpace">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#HelpRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#HelpRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Honesty -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Honesty">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#InformationDeliveryIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#InformationDeliveryIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#DeliveryIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#InformationRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#InformationRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#InquiryIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#InquiryIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Intention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Intention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#InteractiveAction -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#InteractiveAction">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#InterpersonalConcept -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#InterpersonalConcept">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Intimacy -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Intimacy">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ItemDeliveryIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ItemDeliveryIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#DeliveryIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Male -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Male">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Sex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Man -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Man">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Meeting -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Meeting">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#MonologueIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#MonologueIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#MoveRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#MoveRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ActionRequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Movement -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Movement">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#GenericTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Neutrality -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Neutrality">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ObjectExplanation -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ObjectExplanation">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExplanationIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ObjectRequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ObjectRequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#OldAge -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#OldAge">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#OrderIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#OrderIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Persuasion -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Persuasion">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Pleasure -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Pleasure">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Pointing -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Pointing">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#ActionOnObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#PointingDownward -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#PointingDownward">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Pointing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#PointingUpward -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#PointingUpward">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Pointing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Politeness -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Politeness">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#PraiseGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#PraiseGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Sex -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Sex">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#BiologicalConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ShakingHand -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ShakingHand">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Farewell"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Greeting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#targetAgeGroup"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#YoungAge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SimpleEmotionExpression -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SimpleEmotionExpression">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SocialAction -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SocialAction">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#PurposefulAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SocialCapability -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SocialCapability">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/srdl2-cap.owl#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SocialConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SocialTask -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SocialTask">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Sorrow -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Sorrow">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SpeakingGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SpeakingGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Speech -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Speech">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#GenericTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Suggestion -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Suggestion">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#SuggestionIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#SuggestionIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Surprise -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Surprise">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalQuantity"/>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Task -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Task">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Tender -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Tender">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#SocialQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#ThoughtExplanation -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#ThoughtExplanation">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExplanationIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#WaitingGesture -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#WaitingGesture">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gesture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#WarningIntention -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#WarningIntention">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#ExpressionIntention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#Woman -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#Woman">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#YoungAge -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#YoungAge">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgeGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_AdultAge -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_adultAge">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AdultAge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_AgreementIntention -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_agreementIntention">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#AgreementIntention"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Anger -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_anger">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Anger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_DeclarativeIntention -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_declarativeIntention">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#DeclarativeIntention"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Fear -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_fear">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Fear"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Female -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_female">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Female"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_InformationDelivery -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_informationDelivery">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#InformationDeliveryIntention"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_InquiryIntention -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_inquiryIntention">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#InquiryIntention"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Male -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_male">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Manager -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_manager">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Manager"/>
+        <knowrob:fullName>관리자</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Neutrality -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_neutrality">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Neutrality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_OldAge -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_oldAge">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#OldAge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Pleasure -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_pleasure">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Pleasure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_RequestIntention -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_requestIntention">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#RequestIntention"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Sorrow -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_sorrow">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Sorrow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_Surprise -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_surprise">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#Surprise"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_social.owl#_YoungAge -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_social.owl#_youngAge">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#YoungAge"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

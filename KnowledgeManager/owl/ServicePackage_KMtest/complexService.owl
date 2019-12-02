@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://robot-arbi.kr/ontologies/complexService.owl#"
+     xml:base="http://robot-arbi.kr/ontologies/complexService.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:isro_medical="http://robot-arbi.kr/ontologies/isro_medical.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:isro="http://robot-arbi.kr/ontologies/isro.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:isro_social="http://robot-arbi.kr/ontologies/isro_social.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#"
+     xmlns:complexService="http://robot-arbi.kr/ontologies/complexService.owl#">
+    <owl:Ontology rdf:about="http://robot-arbi.kr/ontologies/complexService.owl">
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro.owl/1.2.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_Caffeine -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_Caffeine">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Caffeine"/>
+        <knowrob:fullName>카페인</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_CarbonicAcid -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_CarbonicAcid">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#CarbonicAcid"/>
+        <knowrob:fullName>탄산</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_Creamer -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_Creamer">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Creamer"/>
+        <knowrob:fullName>프림</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_FacialTissue -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_FacialTissue">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#FacialTissue"/>
+        <knowrob:fullName>티슈</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_Fragile -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_Fragile">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Fragile"/>
+        <knowrob:fullName>깨지기쉬움</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_Hot -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_Hot">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Hot"/>
+        <knowrob:fullName>뜨거움</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_Sugar -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_Sugar">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Sugar"/>
+        <knowrob:fullName>설탕</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_blacktea -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_blacktea">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#BlackTea"/>
+        <knowrob:hasIngredient rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Caffeine"/>
+        <knowrob:stateOfObject rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Hot"/>
+        <isro:servesWith rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_FacialTissue"/>
+        <knowrob:fullName>홍차</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_cleaning -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_cleaning">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Cleaning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_coffee -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_coffee">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Coffee-Beverage"/>
+        <knowrob:hasIngredient rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Caffeine"/>
+        <knowrob:stateOfObject rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Hot"/>
+        <isro:servesWith rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Creamer"/>
+        <knowrob:fullName>커피</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_juice -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_juice">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Juice"/>
+        <knowrob:hasIngredient rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Sugar"/>
+        <knowrob:stateOfObject rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Fragile"/>
+        <isro:servesWith rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_FacialTissue"/>
+        <knowrob:fullName>주스</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_sparklingWater -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_sparklingWater">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#SparklingWater"/>
+        <knowrob:hasIngredient rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_CarbonicAcid"/>
+        <knowrob:stateOfObject rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_Fragile"/>
+        <isro:servesWith rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_FacialTissue"/>
+        <knowrob:fullName>탄산수</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#_water -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#_water">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Water"/>
+        <isro:servesWith rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_FacialTissue"/>
+        <knowrob:fullName>물</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#bottle01 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#bottle01">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Bottle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#bottle02 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#bottle02">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Bottle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#person001 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#person001">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <isro_medical:getDisease rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#_diabetes"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_blacktea"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_coffee"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_juice"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_water"/>
+        <knowrob:fullName>유명수</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#person002 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#person002">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_blacktea"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_coffee"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_juice"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_water"/>
+        <knowrob:fullName>조건희</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#person003 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#person003">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <isro:hasPosition rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#_manager"/>
+        <knowrob:fullName>최병기</knowrob:fullName>
+        <isro:phoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">01053959252</isro:phoneNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/complexService.owl#person004 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/complexService.owl#person004">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <isro_medical:getDisease rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#_diabetes"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_blacktea"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_coffee"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_juice"/>
+        <isro_social:prefer rdf:resource="http://robot-arbi.kr/ontologies/complexService.owl#_water"/>
+        <knowrob:fullName>이기호</knowrob:fullName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

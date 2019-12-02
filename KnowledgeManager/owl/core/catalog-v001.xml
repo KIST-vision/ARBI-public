@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro_social.owl/1.0.0" uri="isro_social.owl"/>
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro.owl/1.2.1" uri="isro.owl"/>
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro_medical.owl/1.0.0" uri="file:////166.104.143.103/ailab/프로젝트/로봇/지능체계/owl/20190725/isro_medical.owl"/>
+    <uri id="User Entered Import Resolution" name="http://robot-arbi.kr/ontologies/isro_cap.owl/1.0.0" uri="file:////166.104.143.103/ailab/프로젝트/로봇/지능체계/owl/20190725/isro_cap.owl"/>
+    <uri id="User Entered Import Resolution" name="http://robot-arbi.kr/ontologies/isro_map.owl/1.0.0" uri="file:////166.104.143.103/ailab/프로젝트/로봇/지능체계/owl/20190725/isro_map.owl"/>
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro_social.owl/1.0.0" uri="file:////166.104.143.103/ailab/프로젝트/로봇/지능체계/owl/20190725/isro_social.owl"/>
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro.owl/1.2.1" uri="file:////166.104.143.103/ailab/프로젝트/로봇/지능체계/owl/20190725/isro.owl"/>
+    <group id="Folder Repository, directory=file:////166.104.143.103/ailab/프로젝트/로봇/지능체계/owl/20190725/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/EduService.owl" uri="EduService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/complexService.owl" uri="complexService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro.owl" uri="isro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_SD.owl" uri="isro_SD.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_cap.owl" uri="isro_cap.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_cloud.owl" uri="isro_cloud.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_map.owl" uri="isro_map.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_medical.owl" uri="isro_medical.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_social.owl" uri="isro_social.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575265677330" name="http://robot-arbi.kr/ontologies/isro_vs.owl" uri="isro_vs.owl"/>
+    </group>
+</catalog>

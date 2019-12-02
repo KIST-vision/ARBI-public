@@ -1,0 +1,870 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://robot-arbi.kr/ontologies/isro_cloud.owl#"
+     xml:base="http://robot-arbi.kr/ontologies/isro_cloud.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:isro="http://robot-arbi.kr/ontologies/isro.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#">
+    <owl:Ontology rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl">
+        <owl:versionIRI rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro.owl/1.2.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentBindingProperty -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentBindingProperty">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentReferedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentReferedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentReferedFromProperty -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentReferedFromProperty">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentBindingProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCalendarID -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCalendarID">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarService"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudArgument -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudArgument">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudMapping -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudMapping">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudResponse -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudResponse">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudServiceProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudServiceProtocol">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventEnd -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventEnd">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventID -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventID">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventStart -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventStart">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventSummary -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventSummary">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#calendarRelatedProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasRequirementLevel -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasRequirementLevel">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#requestResource -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#requestResource">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#resourceOwner -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#resourceOwner">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOAuth"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#responseResource -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#responseResource">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#cloudObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#contentType -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#contentType"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasAccessToken -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasAccessToken">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasArgumentName -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasArgumentName">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasArgumentValue -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasArgumentValue">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasClientKey -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasClientKey">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasClientSecret -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasClientSecret">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudGLName -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudGLName">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasGLExpressionName -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasGLExpressionName"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasHTTPMethod -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasHTTPMethod">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasRefreshToken -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasRefreshToken">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasScope -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasScope">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#hasServiceURL -->
+
+    <owl:DatatypeProperty rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasServiceURL">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsCheckService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsCheckService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsGetService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsGetService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventID"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsMakeService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsMakeService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventEnd"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventStart"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasEventSummary"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsRemoveService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsRemoveService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsUpdateService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsUpdateService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCalendarID"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAPIKey -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAPIKey">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAuthentification"/>
+        <owl:disjointWith rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOAuth"/>
+        <owl:disjointWith rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOpenAPI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#CloudIBT"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentReferedFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#argumentReferedFromProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudMapping"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasRequirementLevel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#contentType"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasArgumentName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasArgumentValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasGLExpressionName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAuthentification -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAuthentification">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#CloudIBT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#BodyMapping"/>
+                    <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#HeaderMapping"/>
+                    <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#URLMapping"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOAuth -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOAuth">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAuthentification"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#resourceOwner"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasAccessToken"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasRefreshToken"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasScope"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasClientKey"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasClientSecret"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOpenAPI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOpenAPI -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOpenAPI">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudAuthentification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequestArgument -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequestArgument">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#FixedLevel"/>
+                    <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#OptionalLevel"/>
+                    <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#RequiredLevel"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudArgument"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponseArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#contentType"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponseArgument -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponseArgument">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#WebService"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudResponse"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudServiceProtocol"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudGLName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasHTTPMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasServiceURL"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#hasCloudResponse"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#CyclicTypeProtocol -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CyclicTypeProtocol">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#ForecastService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#ForecastService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GeoinformationService -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GeoinformationService">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#NotificationTypeProtocol -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#NotificationTypeProtocol">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#QueryTypeProtocol -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#QueryTypeProtocol">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#RequestTypeProtocol -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#RequestTypeProtocol">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudServiceProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#BodyMapping -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#BodyMapping">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#FixedLevel -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#FixedLevel">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckCalendarID -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckCalendarID">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequestArgument"/>
+        <hasCloudMapping rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#URLMapping"/>
+        <hasRequirementLevel rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#FixedLevel"/>
+        <contentType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</contentType>
+        <hasArgumentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calendarID</hasArgumentName>
+        <hasArgumentValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary</hasArgumentValue>
+        <hasGLExpressionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CalendarID</hasGLExpressionName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponse -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponse">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponseEnd -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponseEnd">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponseArgument"/>
+        <hasCloudMapping rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#BodyMapping"/>
+        <contentType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</contentType>
+        <hasArgumentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">items[].end.dateTime</hasArgumentName>
+        <hasGLExpressionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">End</hasGLExpressionName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponseStart -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponseStart">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponseArgument"/>
+        <hasCloudMapping rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#BodyMapping"/>
+        <contentType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</contentType>
+        <hasArgumentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">item[].start.dateTime</hasArgumentName>
+        <hasGLExpressionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Start</hasGLExpressionName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponseSummary -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckResponseSummary">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudResponseArgument"/>
+        <hasCloudMapping rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#BodyMapping"/>
+        <contentType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</contentType>
+        <hasArgumentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">item[].summary</hasArgumentName>
+        <hasGLExpressionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Summary</hasGLExpressionName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckService -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckService">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsCheckService"/>
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudOAuth"/>
+        <hasCalendarID rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#GoogleCalendarEventsCheckCalendarID"/>
+        <resourceOwner rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#Person001"/>
+        <hasClientKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">client_key_here</hasClientKey>
+        <hasClientSecret rdf:datatype="http://www.w3.org/2001/XMLSchema#string">client_secret_here</hasClientSecret>
+        <hasRefreshToken rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refresh_token_here</hasRefreshToken>
+        <hasScope rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.googleapis.com/auth/calendar</hasScope>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#HeaderMapping -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#HeaderMapping">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#OptionalLevel -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#OptionalLevel">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#Person001 -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#Person001">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#RequiredLevel -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#RequiredLevel">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudRequirementLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_cloud.owl#URLMapping -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#URLMapping">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_cloud.owl#CloudMappingRule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsCheckService"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsGetService"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsMakeService"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsRemoveService"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CalendarEventsUpdateService"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#CyclicTypeProtocol"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#NotificationTypeProtocol"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#QueryTypeProtocol"/>
+            <rdf:Description rdf:about="http://robot-arbi.kr/ontologies/isro_cloud.owl#RequestTypeProtocol"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

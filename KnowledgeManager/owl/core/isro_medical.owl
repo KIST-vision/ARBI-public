@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://robot-arbi.kr/ontologies/isro_medical.owl#"
+     xml:base="http://robot-arbi.kr/ontologies/isro_medical.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:isro_medical="http://robot-arbi.kr/ontologies/isro_medical.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#">
+    <owl:Ontology rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl">
+        <owl:versionIRI rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl/1.0.0"/>
+        <owl:imports rdf:resource="http://robot-arbi.kr/ontologies/isro.owl/1.2.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#getDisease -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#getDisease">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/knowrob.owl#Person"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#medicallyTreatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#medicallyTreatedBy">
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Disease"/>
+        <rdfs:range rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalDepartment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#shouldAvoid -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#shouldAvoid"/>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#targetDisease -->
+
+    <owl:ObjectProperty rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#targetDisease">
+        <rdfs:subPropertyOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#target"/>
+        <rdfs:domain rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalRecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#Diabetes -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#Diabetes">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MetabolicDisorder"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#shouldAvoid"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/knowrob.owl#Sugar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#Disease -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#Disease">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#Flu -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#Flu">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#InfectiousDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#InfectiousDisease -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#InfectiousDisease">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#PhysicalDisease"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#medicallyTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#InternalMedicineDepartment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#Influenza -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#Influenza">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#InfectiousDisease"/>
+        <rdfs:label>flu</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#InternalMedicineDepartment -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#InternalMedicineDepartment">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalDepartment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalConcept -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalConcept">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_social.owl#BiologicalConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalDepartment -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalDepartment">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalRecord -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalRecord">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#RecordRelatedEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#MedicallyHandling -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicallyHandling">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#PurposefulAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#MentalDisease -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#MentalDisease">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#MetabolicDisorder -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#MetabolicDisorder">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#PhysicalDisease"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#medicallyTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#InternalMedicineDepartment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#OtolaryngologyDepartment -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#OtolaryngologyDepartment">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalDepartment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#PhysicalDisease -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#PhysicalDisease">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#Schizophrenia -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#Schizophrenia">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MentalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#Stomachache -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#Stomachache">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#PhysicalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#SurgeryDepartment -->
+
+    <owl:Class rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#SurgeryDepartment">
+        <rdfs:subClassOf rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#MedicalDepartment"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_Diabetes -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_diabetes">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Diabetes"/>
+        <knowrob:fullName>당뇨</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_Fall -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_fall">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro.owl#Fall"/>
+        <knowrob:fullName>낙상</knowrob:fullName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_Flu -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_flu">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Flu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_Influenza -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_influenza">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Influenza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_InternalMedicineDepartment -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_internalMedicineDepartment">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#InternalMedicineDepartment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_OtolaryngologyDepartment -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_otolaryngologyDepartment">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#OtolaryngologyDepartment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_Schizophrenia -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_schizophrenia">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Schizophrenia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_Stomachache -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_stomachache">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#Stomachache"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://robot-arbi.kr/ontologies/isro_medical.owl#_SurgeryDepartment -->
+
+    <owl:NamedIndividual rdf:about="http://robot-arbi.kr/ontologies/isro_medical.owl#_surgeryDepartment">
+        <rdf:type rdf:resource="http://robot-arbi.kr/ontologies/isro_medical.owl#SurgeryDepartment"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

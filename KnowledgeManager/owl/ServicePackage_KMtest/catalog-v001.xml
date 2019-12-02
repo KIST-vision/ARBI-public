@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro_medical.owl/1.0.0" uri="file:/C:/Users/조건희/eclipse-workspace/KnowledgeManager/owl/core/isro_medical.owl"/>
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro_social.owl/1.0.0" uri="file:/C:/Users/조건희/eclipse-workspace/KnowledgeManager/owl/core/isro_social.owl"/>
+    <uri id="Imports Wizard Entry" name="http://robot-arbi.kr/ontologies/isro.owl/1.2.1" uri="file:/C:/Users/조건희/eclipse-workspace/KnowledgeManager/owl/core/isro.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1575268988936" name="http://robot-arbi.kr/ontologies/complexService.owl" uri="complexService.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575268988936" name="http://robot-arbi.kr/ontologies/isro_cap.owl" uri="isro_cap.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575268988936" name="http://robot-arbi.kr/ontologies/isro_cloud.owl" uri="isro_cloud.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1575268988936" name="http://robot-arbi.kr/ontologies/isro_map.owl" uri="isro_map.owl"/>
+    </group>
+</catalog>

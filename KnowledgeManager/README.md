@@ -79,7 +79,26 @@ KM은 사용자, 인지, 환경, 행위, 로봇 프로파일 등을 표현하는
      LoggerManager Registering
      
      Welcome to Initialize!
-     ...
+     Welcome to CreateClassAction!
+     Welcome to CreatePropertyAction!
+     Welcome to CreateIndividualAction!
+     Welcome to CreateRelationAction!
+     Welcome to QueryRelationAction!
+     Welcome to QueryMultiRelationAction!
+     Welcome to QueryCloudRelationAction!
+     Welcome to DeleteClassAction!
+     Welcome to DeletePropertyAction!
+     Welcome to DeleteIndividualAction!
+     Welcome to DeleteRelationAction!
+     Welcome to PathFindingAction!
+     Welcome to RequestRecommendation!
+     
+     <INIT>: MAP ontology model is loaded.
+     <INIT>: CAPABILITY ontology model is loaded.
+     <INIT>: CLOUD ontology model is loaded.
+     <INIT>: SERVICE ontology model is Loaded.
+     
+     <TEST> : ready to start!
      ```
 
 # 3. KM 프로토콜

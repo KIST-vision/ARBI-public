@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Agent-Property>
+	<OS>WINDOW</OS>
+	<ServerURL>tcp://127.0.0.1:61616</ServerURL>
+	<AgentName>agent://www.arbi.com/knowledgeManager</AgentName>
+	<BrokerType>ZeroMQ</BrokerType></Agent-Property>

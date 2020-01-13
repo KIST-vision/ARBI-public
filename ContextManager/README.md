@@ -1,7 +1,7 @@
 상황 관리기(Context Manager)
 ===========
 
-![ARBI Framework](image01.png)
+![ARBI Framework](ContextManager_Architecture.png)
 
 # 목차
 0. [개요](#개요) 
@@ -87,7 +87,7 @@ Environment:
 	
 ### Configuration 예시
 
-/*
+```
 	public static final String JMS_BROKER_URL = "tcp://127.0.0.1:61616";
 	public static final String TM_ADDRESS = "agent://www.arbi.com/taskManager";
 	public static final String CM_ADDRESS = "agent://www.arbi.com/contextManager";
@@ -97,7 +97,7 @@ Environment:
 	public static final String ACTION_ADDRESS = "agent://www.arbi.com/action";
 	public static final String TASKLOG_ADDRESS = "agent://www.arbi.com/TaskLog";
 	public static final String DC_URL = "dc://CM";
-*/
+```
 
 # 실행법
 ## 윈도우
@@ -119,15 +119,15 @@ jpl_new('kgu.agent.demo.agent.ContextManager', [], CM), nb_setval(cm, CM) succee
 .....
 ```
 
-* 브로커를 찾지 못했을 경우에는 다음과 같이 실행 도중 정지한다.
-  ```
+브로커를 찾지 못했을 경우에는 다음과 같이 실행 도중 정지한다.
+```
     이클립스에서 ContextManagerLauncher.java파일 실행
     use_module(library('semweb/rdf_db')) succeeded
 	use_module(library('jpl')) succeeded
 	jpl_new('kgu.agent.demo.agent.ContextManager', [], CM), nb_setval(cm, CM) succeeded
 	javax.jms.JMSException: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
 
-  ```
+```
 
 # 프로토콜, 명령어 사용법 및 예시
 

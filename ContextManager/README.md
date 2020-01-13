@@ -1,46 +1,203 @@
-# ContextManager
-## 개요
-로봇 지능 프레임워크는 매우 다양한 지능적 능력들이 요구되지만, 그 중에서도 가장 필수적인 능력 중 하나가 동적으로 변화하는 주변 환경에 대한 올바른 상황 인식과 상황 이해 능력이다. 이를 고려하여 효과적인 동적 상황 관리 및 시간-공간-사용자 복합 상황 추론을 제공하는 것이 바로 ContextManager이다.
+상황 관리기(Context Manager)
+===========
 
-ContextManger는 논리형 고급 프로그래밍 언어인 Prolog를 기반으로 상황 정보를 표현하고 다양한 추론 규칙들을 검증한다. PerceptionManger로부터 실시간으로 수집되는 환경, 물체, 로봇, 사용자 등의 인식 데이터를 토대로 저수준 상황 정보를 구축하고 이를 바탕으로 사무 환경, 가정 환경, 교육 환경 등에서 서비스 제공을 위해 요구되는 고수준 상황 정보들을 추론한다. 추론된 고수준 상황 정보는 TaskManager의 요청에 따라 제공된다.
+![ARBI Framework](image01.png)
 
-## 기능
-ContextManger의 기능을 소개하기 위한 상세 구조도는 아래 그림과 같다.
+# 목차
+0. [개요](#개요) 
+1. [시스템 요구사항](#시스템-요구사항) 
+2. [설치](#설치) 
+3. [실행법](#실행법) 
+4. [프로토콜, 명령어 사용법 및 예시](#프로토콜,-명령어-사용법-및-예시) 
+5. [모델](#모델) 
 
-![상황 관리자 구조](./ContextManager_Architecture.png)
+# 개요
+로봇 지능 플랫폼은 지능형 서비스 로봇을 제작하기 위한 프로그램이다. 이 플랫폼은 변화하는 환경과 사용자의 요구에 대응하여 적합한 행동을 선택할 수 있는 로봇을 만들기 위해 개발되었으며, 상황 관리기는 이 지능 로봇 플랫폼의 모듈 중 하나이다.
 
-ContextManger의 내부에는 온톨로지 지식을 저장하는 온톨로지 메모리(context Ontology)와 동적 상황 지식을 저장 하는 작업 메모리(working memory)가 있다. 그리고 온톨로지 메모리와 작업 메모리를 참조하면서 동작하는 주요 처리 모듈로는 인식 처리기(perception handler), 시-공간 복합 추론기 (hybrid reasoner), 질의 처리기(query processor), 지식 인터페이스(knowledge interface) 등이 있으며, 이들은 모두 Prolog 규칙들과 Java 코드들로 구현된다. 인식 처리기는 다양한 센서들이나 인식 시스템들로부터 인식 데이터를 입력받아 저수준의 상황 정보를 생성하고 이것을 작업 메모리에 저장하는 역할을 수행하며, 지식 인터페이스는 외부로부터 받은 상황 질의(context query)를 분석하여 질의에 부합하는 상황 정보를 작업 메모리에서 찾아 질의 결과로 보내주는 역할을 수행한다. 때로는 지식 인터페이스가 비-동기 방식의 상황 지식 전달 서비스도 제공하는데, 이때는 상황 질의로부터 외부에서 통보 받기 원하는 상황 조건을 추출한 다음, 이 조건을 만족하는 상황 정보가 등록되는지 작업 메모리를 지속적으로 모니터링(monitoring)한다. 그리고 만약 해당 조건을 만족하는 저수준 혹은 고수준의 상황 정보가 발생하면, 즉각적으로 상황 지식을 외부에 통보(notify)하는 역할을 지식 인터페이스가 수행한다. 한편, 시-공간 복합 추론기는 작업 메모리에 등록되는 저수준의 상황 정보들에 다양한 추론 규칙들을 적용함으로써 고수준의 상황 정보를 추론해내는 역할을 수행한다. 하지만 본 ContextManger에서는 불필요한 추론을 최대한 줄이고 계산 효율성을 높이기 위해, 상황 질의를 통해 외부에서 고수준의 상황 정보를 요청할 때에만 해당 정보를 얻기 위한 후향 추론(on-demand, backward reasoning)을 수행하도록 설계하였다. 이렇게 시-공간 복합 추론기를 설계함으로써, 서비스 로봇의 행동 및 의사 결정에 당장 필요하지도 않은 관심 밖의 많은 물체들의 작은 변화에도 민감하게 반응해 이들과 연관된 모든 고수준의 상황 정보들을 추론해내는 낭비적인 계산을 피할 수 있다.
+상황 관리기의 핵심 기능은 로봇의 실시간 인식 정보로부터 저수준 상황 지식을 생성하고 이를 이용하여 로봇, 사용자, 물체, 환경, 작업 등과 관련된 고수준의 상황 지식을 추론하는 것이다.
 
-## 모델
-ContextManger는 모든 서비스에서 공통적으로 요구되는 핵심적인 상황 정보를 표현하기 위한 상황 서술자들과 특정 서비스에 특화된 상황 정보를 표현하기 위한 상황 서술자들을 정의해야 한다. 또한, 각각의 상황 서술자들을 검증하기 위해 논리형 고급 프로그래밍 언어인 Prolog로 추론 규칙들을 작성하여 패키지 형태로 저장 및 관리한다.
-상황 서술자 패키지는 아래와 그림과 같이 구성되어 있다.
+상황 관리기는 ARBI 프레임워크를 바탕으로 개발되어 있기 때문에 JAVA 언어로 구현되어 있다. 내부 추론 엔진, 작업 메모리 등은 SWI-Prolog로 구현되어 있다.
 
-![서술자 목록](./ContextManager_Attribute.png)
+ARBI 프레임워크에서 상황 관리기의 주요 역할은 작업 관리기가 의사 결정을 할 수 있도록 상황 서술자를 제공하는 것이다. 상황 서술자는 RDF/OWL로 작성된 ARBI 온톨로지를 따르고 있으며 인식 정보로부터 추론되기 때문에 지식 관리기, 인식 관리기와 밀접한 관련이 있다. 
 
-상황 서술자는 크게 속성 서술자와 관계 서술자로 나뉜다. 속성 서술자는 주로 저수준 상황 정보를 표현하기 위한 서술자들로써 주로 개별 물체, 로봇, 사람 등의 상태를 나타낸다. 관계 서술자는 주로 고수준 상황 정보를 표현하기 위한 서술자들로써 주로 서로 다른 물체, 로봇, 사람들 간의 시간-공간-사용자 복합 관계를 나타낸다.
-대표적인 속성 서술자와 관계 서술자들의 목록은 아래 표와 같다.
+# 시스템 요구사항
+Hardware:
+- 4 core 4 thread CPU 이상
+- 8GB RAM 이상
 
-속성 서술자(attribute predicate)
+Environment: 
+- JRE 1.8 버전
+- swi-prolog 7 버전 이상 및 jpl (bidirectional java/prolog interface)
+	(5.10.1 버전의 경우 jpl의 import 방식에 차이가 있음)
+- eclipse 통합 개발 환경
 
-Environment|Object|Human|Robot|Event
----|---|---|---|---
-mainColorOfObject, boundingBoxSize, roomnumber, …|mainColorOfObject, boundingBoxSize, objectShapeType, stateOfObject, …|hasSex, hasAge, belongto, nameString, hasPosition, …|currentJointAngle, currentJointTorque, hasCamera, hasHand, robotHandType, …|startTime, endTime, duration, …
+# 설치
 
-관계 서술자(relationship predicate)
+## 상황 관리기 설치
+  * [지능체계 Github]<다운로드 링크>에 접속하여 ContextManager 다운로드
+  * 다운로드 받은 압축 파일을 압축 해제
+## JRE 설치
+  * https://java.com/ko/download 에서 JRE 1.8버전 설치
+## 통합 개발환경 설치
+  * https://www.eclipse.org/의 download에서 eclipse 설치
+## prolog 설치
+  * https://www.swi-prolog.org/Download.html 에서 prolog 7버전 이상 설치
+## prolog 경로 환경설정
+  * eclipse 설정
+	* jpl.jar를 ContextManager 프로젝트에 external jar로 추가
+    * Linux 환경
+	  * kgu.agent.demo하위 ContextManagerLauncher.java의 run configuration 설정
+	  * Arguments 탭의 VM arguments 설정
+	  * Environment 탭의 Variable과 Value 설정
+	* Windows 환경
+	  * kgu.agent.demo하위 ContextManagerLauncher.java의 run configuration 설정
+	  * Arguments 탭의 VM arguments 설정
+	  * Environment 탭의 Variable과 Value 설정
+  * eclipse를 사용하지 않는 경우 별도의 path 설정 필요
+    * Linux: ~./bashrc에 LD_LIBRARY_PATH, LD_PRELOAD, SWI_HOME_DIR, PATH 설정
+	* Windows: 시스템 설정에서 PATH를 설정
+### prolog 경로 환경설정 예시
+  * Linux 환경
+	* Arguments 탭의 VM arguments 설정
+		-Djava.library.path="/usr/lib/swi-prolog/lib/x86_64-linux"
+	* Environment 탭의 Variable과 Value 설정
+		Variable: LD_PRELOAD, Value: /usr/lib/swi-prolog/lib/x86_64-linux/libswipl.so
+		Variable: PATH, Value: /usr/lib/swi-prolog/bin
+		Variable: SWI_HOME_DIR, Value: /usr/lib/swi-prolog
+  * Windows 환경
+  * Arguments 탭의 VM arguments 설정
+		-Djava.library.path="D:\swiprolog\swipl\bin;."
+	* Environment 탭의 Variable과 Value 설정
+		Variable: PATH, Value: D:\swiprolog\swipl\bin;${env_var:PATH}
+  
+## Broker Configuration 설정
+  * 압축 해제된 폴더 안의configuration/Configuration.xml 파일 설정을 통해 Agent의 정보 입력
+    * ServerURL : 사용하는 메시지 브로커가 동작하고 있는 주소와 포트
+    * AgentName : 해당 Agent의 주소로 사용할 이름
+    * BrokerType : 사용하는 메시지 브로커의 종류(ZeroMQ/Apollo 중 하나 선택)
+	* JMS_BROKER_URL : 사용하는 메시지 브로커가 동작하고 있는 주소와 포트
+	* TM_ADDRESS : TaskManager Agent의 주소로 사용할 이름
+	* CM_ADDRESS : 해당(ContextManager) Agent의 주소로 사용할 이름
+	* KM_ADDRESS : KnowledgeManager Agent의 주소로 사용할 이름
+	* BEHAVIOUR_INTERFACE_ADDRESS : BehaviorInterfaceManager Agent의 주소로 사용할 이름
+	* PERCEPTION_ADRESS : PeceptionManager Agent의 주소로 사용할 이름
+	* ACTION_ADDRESS : Action 표기를 위한 주소로 사용할 이름
+	* TASKLOG_ADDRESS : TaskLog 표기를 위한 주소로 사용할 이름
+	* DC_URL : 업로드하는 지식을 표기를 위한 주소로 사용할 이름
+	
+### Configuration 예시
 
-Subject\Object|Environment|Object|Human|Robot|Event
----|---|---|---|---|---
-Environment|locatedAtRelative, connectedTo, …|in-ContGeneric, outSideOf, in-CenterOf, …|in-ContGeneric, outSideOf, in-CenterOf, …|in-ContGeneric, outSideOf, in-CenterOf, …|typePrimaryFunction-containerUsed, …
-Object|storedAtPlace, inRoom,  near, far, …|locatedAtRelative, piled, madeOf, …|locatedAtRelative, createdBy, …|locatedAtRelative, createdBy, …|typePrimaryFunction-itemUsedFor, ...
-Human|inRoom, near, far, …|locatedAtRelative, graspedBy, isHolding, …|aboveOf, belowOf, toTheLeftOf, friend, ...|aboveOf, belowOf, toTheLeftOf, toTheRightOf, ...|do, play, act, host, …
-Robot|inRoom, near, far, …|locatedAtRelative, graspedBy, isHolding, …|locatedAtRelative, performedBy, …|locatedAtRelative, sub_component, succeeding_link, …|do, play, act, host, …
-Event|objectActedOn, deviseUsed, …|objectActedOn, deviseUsed, …|agentActedOn, doneBy, …|agentActedOn, doneBy, …|processStarted, processStopped, postEvent, ...
+/*
+	public static final String JMS_BROKER_URL = "tcp://127.0.0.1:61616";
+	public static final String TM_ADDRESS = "agent://www.arbi.com/taskManager";
+	public static final String CM_ADDRESS = "agent://www.arbi.com/contextManager";
+	public static final String KM_ADDRESS = "agent://www.arbi.com/knowledgeManager";
+	public static final String BEHAVIOUR_INTERFACE_ADDRESS = "agent://www.arbi.com/behaviourInterface";
+	public static final String PERCEPTION_ADRESS = "agent://www.arbi.com/perception";
+	public static final String ACTION_ADDRESS = "agent://www.arbi.com/action";
+	public static final String TASKLOG_ADDRESS = "agent://www.arbi.com/TaskLog";
+	public static final String DC_URL = "dc://CM";
+*/
 
-## 프로토콜
-ContextManger는 TaskManger의 상황 정보 조회를 위하여 동기 또는 비동기 형식의 메시지 전송 방식을 지원한다. ContextManager가 사용 가능한 메시지 형식은 다음과 같다. 
+# 실행법
+## 윈도우
+  1. ArbiFramework 실행(ArbiFramework 문서의 실행 항목 참조)
+  2. ContextManager 폴더 내에 위치한 ContextManagerLauncher.java 파일 실행
 
-Sender|Type|Description|Receiver|GL|Argument
----|---|---|---|---|---
-TaskManager|Request|상황 정보 조회/추론 요청|ContextManager|(context($predicate $subject $object $timeOperator $time))|$predicate: 상황 서술자 <br>$subject: 서술자의 주어 <br>$object: 서술자의 목적어 <br>$timeOperator: 상황 서술자의 유효 시간 추론 서술자, BEFORE, AFTER 등 <br>$time: 상황 서술자의 유효 시간
-TaskManager|Subscribe|상황 정보 구독 요청|ContextManager|(subscribe $id (rule (fact ($predicate1 $subject1 $object1))--> (notify ($predicate2 $subject2 $object2))))|$id: 구독 등록 식별자 <br>$predicate1: 구독 상황 서술자 <br>$subject1: 구독 상황 서술자의 주어 <br>$object1: 구독 상황 서술자의 목적어 <br>$predicate2: 통보 상황 서술자 <br>$subject2: 통보 상황 서술자의 주어 <br>$object2: 통보 상황 서술자의 목적어
-TaskManager|Unsubscribe|상황 정보 구독 취소 요청|ContextManager|(unsubscribe $id)|$id: 구독 등록 식별자
+## 리눅스
+  1. ArbiFramework 실행(ArbiFramework 문서의 실행 항목 참조)
+  2. ContextManager 폴더 내에 위치한 ContextManagerLauncher.java 파일 실행
+
+## 실행 예시
+```
+이클립스에서 ContextManagerLauncher.java파일 실행
+use_module(library('semweb/rdf_db')) succeeded
+use_module(library('jpl')) succeeded
+jpl_new('kgu.agent.demo.agent.ContextManager', [], CM), nb_setval(cm, CM) succeeded
+======Start Context_Manager======
+[prolog/init] succeeded
+.....
+```
+
+* 브로커를 찾지 못했을 경우에는 다음과 같이 실행 도중 정지한다.
+  ```
+    이클립스에서 ContextManagerLauncher.java파일 실행
+    use_module(library('semweb/rdf_db')) succeeded
+	use_module(library('jpl')) succeeded
+	jpl_new('kgu.agent.demo.agent.ContextManager', [], CM), nb_setval(cm, CM) succeeded
+	javax.jms.JMSException: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+
+  ```
+
+# 프로토콜, 명령어 사용법 및 예시
+
+* 상황 관리기는 다른 Agent들로부터 추론에 필요한 정보를 수신할 수 있고, 추론 결과에 대한 내용을 송신할 수 있다. 상황 관리기가 수용 가능한 프로토콜의 경우 다음과 같다. GL에 대한 명세는 ArbiFramework 문서를 참조
+
+## GL 프로토콜 개요
+
+| GL Name | Type | Description | Argument |
+|---------|------|-------------|----------|
+|AssertFact|Request|WorkingMemory에 특정 Relation을 추가|$factName<br>$argument|
+|RetractFact|Request|WorkingMemory에 특정 Relation을 제거|$factName<br>$argument|
+|UpdateFact|Request|WorkingMemory에 특정 Relation을 갱신|$oldFactName<br>$newFactName<br>$newFactArgument|
+|Context|LTMSubscription|LTM에서 Context 정보를 받아와 Relation에 추가|$contextName<br>$argument|
+
+
+## 프로토콜 상세 설명
+### AssertFact
+* WorkingMemory에 특정 Relation을 추가
+1. GL 요청 형식
+```
+(AssertFact ($perceptionName $argument1 $argument2...))
+```
+  * $perceptionName : 인식한 perceptionName
+  * $argument : 인식한 perception의 인자
+2. 예시
+```
+(AssertFact (visualObjectPerception “cup01” "perception01"))
+```
+### RetractFact
+* WorkingMemory에 특정 Relation을 제거
+1. GL 요청 형식
+```
+(RetractFact ($predicate $argument1 $argument2...))
+```
+  * $predicate : 제거할 perceptionName
+  * $argument : 제거할 perception의 인자
+2. 예시
+```
+(RetractFact (visualObjectPerception “cup01” "perception01"))
+```
+### UpdateFact
+* WorkingMemory에 특정 Relation을 갱신
+1. GL 요청 형식
+```
+(UpdateFact ($predicate $argument1 $argument2...))
+```
+  * $predicate : 갱신할 perceptionName
+  * $argument : 갱신할 perception의 인자
+2. 예시
+```
+(UpdateFact (visualObjectPerception “cup01” "perception01"))
+```
+### Context
+* 추론할 질의문을 요청받고, 추론한 질의문을 응답을 채워 전달
+1. GL 요청 형식
+```
+(context ($predicate $argument1 $argument2...))
+```
+  * $predicate : 질의할 서술자 
+  * $argument : 추론에 필요한 인자
+2. 예시
+```
+(context (graspedBy “cup01” "left_hand01"))
+```
+
+# 모델
+ContextManager는 내부에 추론을 하기 위해서 Prolog를 사용하고 있다. 따라서 ContextManager에 새로운 추론 서술자를 생성하기 위해선 Prolog 언어를 사용하여 작성하여야 한다.
+
+Prolog 언어는 다음과 같이 구성되어 있다.
+
+predicate_name(A,B):-  = 가장 왼쪽에는 서술자의 이름, 괄호 안에는 파라미터들 :-이후에는 서술자의 규칙들을 정의한다.
+규칙들은 필요에 따라 라이브러리에서 검색하여 사용한다. 라이브러리 검색은 아래 사이트에서 할 수 있다.
+https://www.swi-prolog.org/pldoc/doc_for?object=section(%27packages/semweb.html%27)
